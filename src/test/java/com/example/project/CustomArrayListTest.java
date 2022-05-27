@@ -85,6 +85,15 @@ public class CustomArrayListTest {
 			assertEquals(7, expectedResult);
 		}
 		@Test
+		void should_add_an_index_and_assign_it_a_value () {
+			CustomArrayList<Integer> customList = new CustomArrayList<>();
+			for (int i = 3; i<1000; i++) {
+				customList.add(i);
+			}
+			customList.add(3, -90);
+			assertEquals(-90, customList.get(3));
+		}
+		@Test
 		void should_throw_out_of_bounds_exception_if_out_of_array() {
 			CustomList<Integer> sut = new CustomArrayList<>();
 			sut.add(1);
